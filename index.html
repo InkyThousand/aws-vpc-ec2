@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Анимация появления */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    /* Стили кнопки */
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      animation: fadeIn 1.4s ease-out;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* Фоновые частицы */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+      50% { transform: translateY(-20px) translateX(20px); opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Pavel's re/Start Project Work</h1>
+    <p>Nice to meet you, my name is Pavel</p>
+    <button onclick="showMessage()">Push the button</button>
+  </div>
+
+  <!-- Фоновые частицы -->
+  <script>
+    // Создание частиц
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 8 + 4;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(particle);
+    }
+
+    // Функция для показа сообщения
+    function showMessage() {
+      alert('Booo!');
+    }
+  </script>
+</body>
+</html>
+
