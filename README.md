@@ -1,0 +1,1 @@
+### Single bash script with commands to create VPC, subnets, IGW and EC2
